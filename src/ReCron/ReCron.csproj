@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PackageId>ReCron</PackageId>
+		<Version>0.1.0</Version>
+		<Authors>Rasedur Rahman Roxy</Authors>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Cronos" Version="0.7.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+	</ItemGroup>
+
+</Project>
