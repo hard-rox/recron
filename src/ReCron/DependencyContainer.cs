@@ -14,10 +14,12 @@ namespace ReCron
             config.Invoke(workerConfig);
 
             if (string.IsNullOrWhiteSpace(workerConfig.CronExpression))
-                throw new ArgumentNullException(nameof(workerConfig.CronExpression), @"Empty Cron Expression is not allowed.");
+                throw new ArgumentException(nameof(workerConfig.CronExpression), @"Empty Cron Expression is not allowed.");
 
             services.AddSingleton<IWorkerConfig<T>>(workerConfig);
             services.AddHostedService<T>();
+
+            ReCronContainer.AddWorker<T>();
 
             return services;
         }

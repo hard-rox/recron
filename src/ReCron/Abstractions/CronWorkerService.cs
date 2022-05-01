@@ -8,13 +8,16 @@ namespace ReCron
     {
         private readonly CronExpression _expression;
         private readonly TimeZoneInfo _timeZoneInfo;
-        private readonly ILogger _logger;
+        private readonly ILogger? _logger;
 
-        protected CronWorkerService(string cronExpression, TimeZoneInfo timeZoneInfo, ILogger logger = null)
+        protected CronWorkerService(string cronExpression, TimeZoneInfo timeZoneInfo, ILogger? logger = null)
         {
-            _expression = CronExpression.Parse(cronExpression);
+            var cronExpLength = cronExpression.Split(' ').Length;
+            if (cronExpLength < 5 || cronExpLength > 6) throw new ArgumentException("Invalid Cron Expression", nameof(cronExpression));
+
+            _expression = CronExpression.Parse(cronExpression, cronExpLength > 5 ? CronFormat.IncludeSeconds : CronFormat.Standard);
             _timeZoneInfo = timeZoneInfo;
-            _logger = logger; ///TODO: assign default logger in case of null...
+            _logger = logger;
         }
 
         protected abstract Task WorkerProcess(CancellationToken stoppingToken);
@@ -23,21 +26,26 @@ namespace ReCron
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                var now = DateTimeOffset.Now;
-                _logger.LogInformation("Worker started at {StartTime}", now);
-                var next = _expression.GetNextOccurrence(now, _timeZoneInfo);
-                _logger.LogInformation("Got next occurrence at {NextOccurrence}", next);
-                if (next.HasValue)
+                var worker = ReCronContainer.GetWorkers().FirstOrDefault(x => x.Name == this.GetType().FullName);
+                if (worker.Status == WorkerStatus.Added) worker.SetStatus(WorkerStatus.Running);
+                else if(worker.Status != WorkerStatus.Stopped)
                 {
-                    var delay = next.Value - DateTimeOffset.Now;
-                    _logger.LogInformation("Got delay TimeSpan of {DelayTimespan}", delay);
-                    await Task.Delay((int)delay.TotalMilliseconds, stoppingToken);
-                    _logger.LogInformation("Worker Process started at {WorkerProcessStartedAt}", DateTimeOffset.Now);
-                    await WorkerProcess(stoppingToken);
-                    _logger.LogInformation("Worker Process ended at {WorkerProcessEndedAt}", DateTimeOffset.Now);
+                    var now = DateTimeOffset.Now;
+                    if (_logger != null) _logger.LogInformation("Worker started at {StartTime}", now);
+                    var next = _expression.GetNextOccurrence(now, _timeZoneInfo);
+                    if (_logger != null) _logger.LogInformation("Got next occurrence at {NextOccurrence}", next);
+                    if (next.HasValue)
+                    {
+                        var delay = next.Value - DateTimeOffset.Now;
+                        if (_logger != null) _logger.LogInformation("Got delay TimeSpan of {DelayTimespan}", delay);
+                        await Task.Delay((int)delay.TotalMilliseconds, stoppingToken);
+                        if (_logger != null) _logger.LogInformation("Worker Process started at {WorkerProcessStartedAt}", DateTimeOffset.Now);
+                        await WorkerProcess(stoppingToken);
+                        if (_logger != null) _logger.LogInformation("Worker Process ended at {WorkerProcessEndedAt}", DateTimeOffset.Now);
+                    }
+                    await Task.Delay(500, stoppingToken);
+                    if (_logger != null) _logger.LogInformation("Worker ended at {EndTime}", DateTimeOffset.Now);
                 }
-                await Task.Delay(500, stoppingToken);
-                _logger.LogInformation("Worker ended at {EndTime}", DateTimeOffset.Now);
             }
         }
     }
