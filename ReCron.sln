@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D71079B0-CBA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1F0BE04B-8C1D-4EC4-9C0B-BDECE9CCF3B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReCron.LegacyWebTest", "test\ReCron.LegacyWebTest\ReCron.LegacyWebTest.csproj", "{D2D1B08C-C03C-4A8B-AB77-F57CEF691974}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReCron.LegacyWebTest", "tests\ReCron.LegacyWebTest\ReCron.LegacyWebTest.csproj", "{D2D1B08C-C03C-4A8B-AB77-F57CEF691974}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
