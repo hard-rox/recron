@@ -7,7 +7,6 @@ jobs:
       matrix:
         dotnet-version: ['6.0.x']
     steps:
-      uses: actions/checkout@main
       - name: Listing
         run: ls
       - name: Restore
