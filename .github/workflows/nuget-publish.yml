@@ -25,4 +25,4 @@ jobs:
       - name: Packing
         run: dotnet pack src/ReCron/ReCron.csproj -c Release
       - name: Nuget Push
-        run: dotnet nuget push src/ReCron/bin/Release/ReCron.0.1.2.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push src/ReCron/bin/Release/ReCron.**.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
