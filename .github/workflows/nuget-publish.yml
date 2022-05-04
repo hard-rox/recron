@@ -7,8 +7,10 @@ jobs:
       matrix:
         dotnet-version: ['6.0.x']
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Listing
-        run: ls ./
+        run: ls
       - name: Restore
         run: dotnet restore ReCron.sln
       - name: Build
