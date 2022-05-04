@@ -10,9 +10,9 @@ jobs:
       - name: Listing
         run: ls
       - name: Restore
-        run: dotnet restore ReCron.sln
+        run: dotnet restore ./ReCron.sln
       - name: Build
-        run: dotnet build ReCron.sln
+        run: dotnet build ./ReCron.sln
 
   test:
     runs-on: ubuntu-latest
@@ -21,7 +21,7 @@ jobs:
         dotnet-version: ['6.0.x']
     steps:
       - name: Test
-        run: dotnet test
+        run: dotnet test ./ReCron.sln
 
   nuget-publish:
     runs-on: ubuntu-latest
@@ -30,6 +30,6 @@ jobs:
         dotnet-version: ['6.0.x']
     steps:
       - name: Packing
-        run: dotnet pack src/ReCron/ReCron.csproj -c Release
+        run: dotnet pack ./src/ReCron/ReCron.csproj -c Release
       - name: Nuget Push
-        run: dotnet nuget push src\ReCron\bin\Release\ReCron.0.1.2.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push ./src\ReCron\bin\Release\ReCron.0.1.2.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
