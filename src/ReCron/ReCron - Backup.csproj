@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PackageId>ReCron</PackageId>
+		<Version>0.1.2</Version>
+		<Authors>Rasedur Rahman Roxy</Authors>
+		<Owners>Rasedur Rahman Roxy</Owners>
+		<Description>A fully-featured .NET library for creating and running Cron/Scheduled jobs using background service</Description>
+		<PackageProjectUrl>https://github.com/hard-rox/recron</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/hard-rox/recron/master/LICENSE</PackageLicenseUrl>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageReleaseNotes>https://github.com/hard-rox/recron/releases</PackageReleaseNotes>
+		<Copyright>Copyright © Rasedur Rahman Roxy</Copyright>
+		<PackageTags>ReCron Cron Recurring Scheduling BackgroundService</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Cronos" Version="0.7.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+	</ItemGroup>
+
+</Project>
