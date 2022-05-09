@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6Demo", "demos\Net6Demo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net5Demo", "demos\Net5Demo\Net5Demo.csproj", "{8A01A198-FA70-4A64-B591-A3974891FC64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore31Demo", "demos\NetCore31Demo\NetCore31Demo.csproj", "{1EA6E076-64E8-4816-B01A-9035E79A3184}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8A01A198-FA70-4A64-B591-A3974891FC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A01A198-FA70-4A64-B591-A3974891FC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A01A198-FA70-4A64-B591-A3974891FC64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EA6E076-64E8-4816-B01A-9035E79A3184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA6E076-64E8-4816-B01A-9035E79A3184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA6E076-64E8-4816-B01A-9035E79A3184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA6E076-64E8-4816-B01A-9035E79A3184}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{C90BBB07-A8C9-4B33-BFF8-8BD826D31547} = {D71079B0-CBA8-4A06-8480-9787CEFA5DA3}
 		{3EEECEE6-F6D7-4477-B840-C6B1DAD41AB6} = {4DF7E6D1-B2EA-4CAC-BDBE-E51CB64480CD}
 		{8A01A198-FA70-4A64-B591-A3974891FC64} = {4DF7E6D1-B2EA-4CAC-BDBE-E51CB64480CD}
+		{1EA6E076-64E8-4816-B01A-9035E79A3184} = {4DF7E6D1-B2EA-4CAC-BDBE-E51CB64480CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8856363F-31E6-45B5-9F3C-381F935D6FA4}
