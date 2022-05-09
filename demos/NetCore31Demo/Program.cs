@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ReCron.LegacyWebTest
+namespace NetCore31Demo
 {
     public class Program
     {
