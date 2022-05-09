@@ -20,5 +20,12 @@
             if (worker == null) throw new ArgumentException("No worker found with supplied workerId");
             worker.SetStatus(WorkerStatus.Stopped);
         }
+
+        public static void StartWorker(string name)
+        {
+            var worker = _container.FirstOrDefault(x => x.Name == name);
+            if (worker == null) throw new ArgumentException("No worker found with supplied workerId");
+            worker.SetStatus(WorkerStatus.Running);
+        }
     }
 }
