@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1F0BE04B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demos", "demos", "{4DF7E6D1-B2EA-4CAC-BDBE-E51CB64480CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6Demo", "demos\Net6Demo\Net6Demo.csproj", "{3EEECEE6-F6D7-4477-B840-C6B1DAD41AB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,12 +23,17 @@ Global
 		{C90BBB07-A8C9-4B33-BFF8-8BD826D31547}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C90BBB07-A8C9-4B33-BFF8-8BD826D31547}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C90BBB07-A8C9-4B33-BFF8-8BD826D31547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EEECEE6-F6D7-4477-B840-C6B1DAD41AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EEECEE6-F6D7-4477-B840-C6B1DAD41AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EEECEE6-F6D7-4477-B840-C6B1DAD41AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EEECEE6-F6D7-4477-B840-C6B1DAD41AB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C90BBB07-A8C9-4B33-BFF8-8BD826D31547} = {D71079B0-CBA8-4A06-8480-9787CEFA5DA3}
+		{3EEECEE6-F6D7-4477-B840-C6B1DAD41AB6} = {4DF7E6D1-B2EA-4CAC-BDBE-E51CB64480CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8856363F-31E6-45B5-9F3C-381F935D6FA4}
