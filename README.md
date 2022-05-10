@@ -55,6 +55,29 @@ services.AddCronWorker<TestJob>(config =>
     config.TimeZoneInfo = TimeZoneInfo.Local;
 });
 ```
+* To get currently injected Jobs with status:
+```C#
+ReCronContainer.GetWorkers();
+```
+* Worker/Job status is an enum
+```C#
+public enum WorkerStatus
+{
+    Added = 0,
+    Running = 1,
+    Stopped = 2,
+}
+```
+* To stop a job:
+```C#
+ReCronContainer.StopWorker(name);
+// name is fully qualified name of job class
+```
+* To start a job:
+```C#
+ReCronContainer.StartWorker(name);
+// name is fully qualified name of job class
+```
 For working examples see ```/demos``` directory.
 
 
