@@ -20,15 +20,15 @@
 
 Package Manager
 ```PM
-Install-Package ReCron -Version 0.2.0
+Install-Package ReCron -Version 0.2.1
 ```
 .NET CLI
 ```
-dotnet add package ReCron --version 0.2.0
+dotnet add package ReCron --version 0.2.1
 ```
 Package Reference 
 ```xml
-<PackageReference Include="ReCron" Version="0.2.0" />
+<PackageReference Include="ReCron" Version="0.2.1" />
 ```
 
 ### Usage
