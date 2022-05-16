@@ -2,5 +2,5 @@ version: 2
 updates:
   - package-ecosystem: "nuget"
     directory: "/src/ReCron"
-    scheduler:
+    schedule:
       interval: "daily"
