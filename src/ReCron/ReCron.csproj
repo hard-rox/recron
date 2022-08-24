@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>ReCron</PackageId>
-		<Version>0.2.1</Version>
+		<Version>0.3.0</Version>
 		<Authors>Rasedur Rahman Roxy</Authors>
 		<Owners>Rasedur Rahman Roxy</Owners>
 		<Description>A fully-featured .NET library for creating and running Cron/Scheduled jobs using background service</Description>
